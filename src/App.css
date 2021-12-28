@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  /* primary colors */
+  --blue: hsl(246, 80%, 60%);
+  --light-red-play: hsl(15, 100%, 70%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --voilet-social: hsl(264, 64%, 52%);
+  --soft-orange-self-care: hsl(43, 84%, 65%);
+
+  /* neutral */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+
+  --font-size-title: 1.1rem;
+  --font-family: 'Rubik', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  background: var(--very-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60rem;
+  height: 55vh;
+  /* border: 1px solid white; */
+  /* display: flex;
+  gap: 1rem; */
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 23.62%);
+  grid-template-rows: repeat(2, 48%);
+  gap: 1rem;
+}
+
+.grid__item.profile {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: var(--dark-blue);
+  border-radius: 0.7rem;
+}
+
+.grid__item-profile_card {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 10%;
+  background: var(--blue);
+  border-radius: 0.7rem;
+}
+
+.grid__item-profile_card__img {
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.2rem solid white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.grid__item-profile_card__img img {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  font-size: 0.7rem;
+  color: var(--pale-blue)
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 32rem) {
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #root {
+    justify-content: unset;
+    align-items: unset;
+    height: unset;
+    padding-block: 10%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    height: unset;
+    width: 100%;
+    padding: 5%;
   }
 }
